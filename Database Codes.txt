@@ -1,0 +1,22 @@
+First Code without Repair Date:
+
+SELECT customer.customer_name, reservation.reservation_date, agency.agency_name, employees.employees_name, car.license_plate_number, returned.return_date, mechanics.mechanics_name, repair.repair_fee 
+FROM customer JOIN reservation ON customer.customer_ID = reservation.reservation_ID 
+JOIN agency ON customer.customer_ID = agency.agency_ID 
+JOIN employees ON customer.customer_ID = employees.employees_ID 
+JOIN car ON customer.customer_ID = car.car_ID 
+JOIN returned ON customer.customer_ID = returned.return_ID 
+JOIN mechanics ON customer.customer_ID = mechanics.mechanics_ID 
+JOIN repair ON customer.customer_ID = repair.repair_ID
+
+Second Code with repair fee but without Date
+
+SELECT customer.customer_name, reservation.reservation_date, agency.agency_name, employees.employees_name, car.license_plate_number, returned.return_date, mechanics.mechanics_name, repair.repair_fee 
+FROM customer 
+JOIN reservation ON customer.customer_ID = reservation.reservation_ID 
+JOIN agency ON customer.customer_ID = agency.agency_ID 
+JOIN employees ON customer.customer_ID = employees.employees_ID 
+JOIN car ON customer.customer_ID = car.car_ID 
+JOIN returned ON customer.customer_ID = returned.return_ID 
+JOIN mechanics ON customer.customer_ID = mechanics.mechanics_ID 
+JOIN repair ON customer.customer_ID = repair.repair_ID
